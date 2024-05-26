@@ -1,0 +1,73 @@
+Class 1
+Cucumber -
+
+BDD - behavioral driven development
+
+gherkin
+
+group id - org.syntax
+artifact id - hrmsb19
+
+src -
+    main - to develop the application
+    test - to test the application
+
+    delete main folder because we don't need it
+
+    in test - we have
+        java - for technical stuff
+        resources - for non technical stuff
+
+now we have - java, selenium, cucumber, apache, commons io
+
+
+scenario - BDD -
+the file where we write BDD scenarios, we call it feature file
+
+In one user story - we have multiple test cases
+similarly, in one feature file, we write multiple scenarios for that user story
+
+ rules of steps - dont add any space or any char after implementing step definition
+ dont write duplicate step def, just one step definition should exist
+ you can call steps in feature multiple times, but in back-end there should be only one step
+ definition
+
+
+Search employee -
+
+Search employee by id -
+    Given user is navigated to HRMS application
+    When user enters valid username and password
+    And user clicks on login button
+    Then user is successfully logged in
+    When user clicks on PIM option
+    And user clicks on employee list option
+    When user enters valid employee id
+    And user clicks on search button
+    Then user see the employee information
+
+
+we have scenarios written in feature file
+we have step definitions in steps classes
+
+all test scenarios are executing properly
+
+we are calling methods from common methods class
+we are using selenium webdriver from common methods class
+
+runner class - it is considered as the most important class of cucumber
+
+3 important classes in cucumber
+feature file
+step definition
+
+runner class - we can execute all of the scenarios, some of the scenarios,
+one of the scenarios from this class
+we can generate all the step definitions in just one click
+we can generate reports also from this class
+we can separate scenarios also from this class
+
+
+
+
+
