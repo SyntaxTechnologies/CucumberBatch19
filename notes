@@ -101,6 +101,14 @@ pre condition and post condition such as opening the browser and closing the bro
 
 RULE: Hooks class will be implemented under steps package
 
+Background vs hooks -
+
+hooks are applicable for complete project (all feature files)
+background is applicable only for one feature file
+
+in background we keep all the common steps for one feature file
+in Hooks we keep only pre conditions and post conditions of the entire project
+
 
 
 
