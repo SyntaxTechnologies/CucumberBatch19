@@ -67,6 +67,47 @@ we can generate all the step definitions in just one click
 we can generate reports also from this class
 we can separate scenarios also from this class
 
+Class 2 -
+recap -
+cucumber -
+feature file in which we write all the scenarios
+step definition class where all the step definitions are available
+runner class - all the test cases we execute from runner class
+
+maven project -
+artifact id - project name
+group id - company name
+
+main - development
+test - to test the application
+ test - java and resources - for all technical part we need java and for all
+ non tech part we need resources
+
+Background -
+it allows us to write all duplicate steps in one feature file till the time flow is
+not broken at one place.
+
+once the flow is broken, we cannot write steps in background.
+one background is applicable for one feature file it means for every feature file
+background will be different
+
+tags = if we need to execute specific scenarios, we use tag name here
+we can add multiple tags to one scenario
+we can give any name to tag
+
+Hooks - in cucumber, hooks we use to mention pre condition and post condition
+of the complete project. It means for all the feature files, we have common
+pre condition and post condition such as opening the browser and closing the browser
+
+RULE: Hooks class will be implemented under steps package
+
+
+
+
+
+
+
+
 
 
 
