@@ -109,6 +109,8 @@ background is applicable only for one feature file
 in background we keep all the common steps for one feature file
 in Hooks we keep only pre conditions and post conditions of the entire project
 
+Data driven testing - when your one test case executes against multiple sets of data
+
 
 
 

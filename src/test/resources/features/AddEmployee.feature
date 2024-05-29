@@ -20,3 +20,17 @@ Feature: Adding employees using different techniques
       When user enters "Sheila" , "MS" and "Bangal"
       And user clicks on save button
       Then employee added successfully
+
+  @ddt
+  Scenario Outline: : Adding employees using data driven testing
+    When user enters "<firstname>" and "<middlename>" and "<lastname>".
+    And user clicks on save button
+    Then employee added successfully
+    Examples:
+      | firstname | middlename | lastname |
+      |Fouad      |MS          |Oliinyk   |
+      |Matt       |MS          |Aslloun   |
+      |Lali       |MS          |Shahad    |
+
+
+
