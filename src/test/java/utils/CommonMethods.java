@@ -3,6 +3,7 @@ package utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.v85.page.Page;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.IOException;
 import java.time.Duration;
 
-public class CommonMethods {
+public class CommonMethods extends PageInitializer {
 
     public static  WebDriver driver;
     public static void openBrowserAndLaunchApplication() throws IOException {
@@ -34,6 +35,7 @@ public class CommonMethods {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.manage().window().maximize();
         driver.get(ConfigReader.read("url"));
+        initializePageObjects();
     }
 
     public static void closeBrowser(){

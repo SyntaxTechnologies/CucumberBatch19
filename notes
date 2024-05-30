@@ -111,6 +111,43 @@ in Hooks we keep only pre conditions and post conditions of the entire project
 
 Data driven testing - when your one test case executes against multiple sets of data
 
+Class 3
+Recap -
+
+background -
+
+in one feature file, if we have some steps which are common across all the scenarios
+then we can write them in background but only till the point where flow is not broken
+
+background is applicable only for one feature file, for every feature file, background
+will be different
+
+hooks -
+
+before and after - pre condition and post condition
+hooks class will always be under steps package
+
+tags - in order to execute scenarios/test cases in groupd, we use tags
+
+hard coded data - it is strictly prohibited
+data should be parameterized - scripts should be generic
+
+from feature file, we can pass the data in scenario itself.
+this type of scenario will be applicable to implement for just one data set
+
+scripts should be generic, it should be data driven testing
+
+when one script executes against multiple sets of data, then we call it data
+driven testing
+in order to implement ddt in cucumber, we use scenario outline with examples table
+
+Page object model design pattern -
+
+we create object repository of every page in individual class
+
+
+
+
 
 
 

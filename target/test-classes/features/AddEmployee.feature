@@ -22,7 +22,7 @@ Feature: Adding employees using different techniques
       Then employee added successfully
 
   @ddt
-  Scenario Outline: : Adding employees using data driven testing
+  Scenario Outline: Adding employees using data driven testing
     When user enters "<firstname>" and "<middlename>" and "<lastname>".
     And user clicks on save button
     Then employee added successfully
