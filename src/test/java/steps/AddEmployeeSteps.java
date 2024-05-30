@@ -14,8 +14,8 @@ public class AddEmployeeSteps extends CommonMethods {
 
     @When("user clicks on Add Employee option")
     public void user_clicks_on_add_employee_option() {
-        WebElement addEmpOption = driver.findElement(By.id("menu_pim_addEmployee"));
-        click(addEmpOption);
+     //   WebElement addEmpOption = driver.findElement(By.id("menu_pim_addEmployee"));
+        click(dashboardPage.addEmployeeOption);
     }
 
     @When("user enters firstname and middlename and lastname")
