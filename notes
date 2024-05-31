@@ -226,6 +226,24 @@ cucumber allows me to pass data from feature file
 my script should run against multiple sets of data
 in order to achieve data driven testing
 
+page object model design pattern
+
+for every screen in the application, you create a page class for this screen and
+keep all the locators (object repository) in it. to maintain the code reusability
+and management
+
+in page class, we use @find by annotation to locate the elements
+we call them object repository
+
+to initialize all the elements, we use constructor because contructor has been called
+automatically when the object has been created.
+
+in constructor, we call page factory and init elements
+
+to utilize all page classes, we implement page initialiser class
+we are calling this class in common methods class so that it can be called
+everywhere.
+
 
 
 
