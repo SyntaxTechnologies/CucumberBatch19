@@ -145,9 +145,86 @@ Page object model design pattern -
 
 we create object repository of every page in individual class
 
+Review class -
+
+cucumber as a tool -
+
+BDD approach - behavioral driven development approach
+
+given - pre condition
+when - to perform actions (click, send keys, drag and drop, dropdown etc)
+then - expected result
+and -  supporting tag that can be used with given, when, then
+
+maven project -
+build tool - it makes my project as a single build
+
+configuration file - pom.xml (dependencies, plugins, run the code)
+
+artifact id - project name
+group id - organisation name
+
+main - to write the code for development
+test - to write the code for testing
+
+test -
+    java - for all technical stuff
+    resources - for all non java stuff
+
+we wrote scenarios in project
+every single test case will be considered as one scenario
+
+we use feature file to write scenarios -
+
+feature file
+step definition class
+runner class
 
 
 
+hooks - pro condition and post condition -
+
+user story - Employee search
+
+Background -
+Given user is navigated to HRMS application
+    When user enters valid username and password
+    And user clicks on login button
+    Then user is successfully logged in
+    When user clicks on PIM option
+    And user clicks on employee list option
+
+Scenario - search employee by id
+    When user enters valid employee id
+    And user clicks on search button
+    Then user see the employee information
+
+
+Scenario - search employee by name
+    When user enters valid employee name
+    And user clicks on search button
+    Then user see the employee information
+
+Hooks - in hooks, we implement pre condition and post condition
+
+pre condition - opening the browser and launching the application
+post condition - close the browser
+
+Rule - hooks will be implemented in steps package
+
+@Before - is pre condition
+@After - is post condition
+
+difference in between hooks and background
+
+background is applicable for one feature file
+hooks are applicable for entire project
+
+we dont pass hard coded data in framework
+cucumber allows me to pass data from feature file
+
+my script should run against multiple sets of data
+in order to achieve data driven testing
 
 
 
