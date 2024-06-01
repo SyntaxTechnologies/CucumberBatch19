@@ -24,6 +24,7 @@ public class LoginSteps extends CommonMethods {
       // WebElement passwordField = driver.findElement(By.cssSelector("input#txtPassword"));
       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
       loginPage.usernameTextField.sendKeys(ConfigReader.read("userName"));
+     // loginPage.enterUsername();
       loginPage.passwordTextField.sendKeys(ConfigReader.read("password"));
     }
 

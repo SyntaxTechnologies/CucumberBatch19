@@ -4,6 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.CommonMethods;
+import utils.ConfigReader;
+
+import java.io.IOException;
 
 public class LoginPage extends CommonMethods {
 
@@ -15,6 +18,10 @@ public class LoginPage extends CommonMethods {
 
     @FindBy(id="btnLogin")
     public WebElement loginButton;
+
+    public void enterUsername() throws IOException {
+        sendText(ConfigReader.read("userName"),loginPage.usernameTextField);
+    }
 
     public LoginPage(){
         PageFactory.initElements(driver, this);

@@ -9,6 +9,9 @@ import org.openqa.selenium.WebElement;
 import pages.AddEmployeePage;
 import utils.CommonMethods;
 
+import java.util.List;
+import java.util.Map;
+
 public class AddEmployeeSteps extends CommonMethods {
 
 
@@ -67,5 +70,30 @@ public class AddEmployeeSteps extends CommonMethods {
         sendText(mn, addEmployeePage.middleNameLoc);
         sendText(ln, addEmployeePage.lastNameLoc);
 
+    }
+
+    @When("user enters firstname and middlename and lastname from data table and verify it")
+    public void user_enters_firstname_and_middlename_and_lastname_from_data_table_and_verify_it
+            (io.cucumber.datatable.DataTable dataTable) throws InterruptedException {
+        List<Map<String, String>> newEmployees = dataTable.asMaps();
+
+        //to get one map at one time from multiple maps
+        for (Map<String, String> employee:
+             newEmployees) {
+            //it will return my value from key
+            String firstNameValue = employee.get("firstname");
+            String middleNameValue = employee.get("middlename");
+            String lastNameValue = employee.get("lastname");
+
+            sendText(firstNameValue, addEmployeePage.firstNameLoc);
+            sendText(middleNameValue, addEmployeePage.middleNameLoc);
+            sendText(lastNameValue, addEmployeePage.lastNameLoc);
+
+            click(addEmployeePage.saveButton);
+            Thread.sleep(2000);
+            //to add multiple employees, I have to click on add employee
+            click(dashboardPage.addEmployeeOption);
+            Thread.sleep(2000);
+        }
     }
 }

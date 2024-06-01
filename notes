@@ -244,6 +244,130 @@ to utilize all page classes, we implement page initialiser class
 we are calling this class in common methods class so that it can be called
 everywhere.
 
+Class 4 -
+
+Recap -
+
+background -
+
+in every feature file, if steps are common in scenarios and the flow is not broken,
+then we keep all these common steps in background.
+
+background is applicable only for one feature file. It means, for every feature file,
+background is different.
+
+hooks - hooks class contains, pre condition and post condition for the entire project
+hooks class will be a part of steps package
+
+we can pass data from feature file in scenario itself through parameters
+
+data driven testing -
+
+we can pass data from scenario outline with examples table
+in examples table, we pass username and password as an example
+based on the total number of data sets, my scenario will be executed
+if I have 3 data sets, my scenario will execute 3 times.
+
+Page object model design pattern -
+
+it allows us to create separate page classes for separate screens
+in this page class, we keep all the locators(object repositories)
+to use these elements, we initialize them using constructor
+
+we create the objects of these page classes using page initializer class
+we are extending this page initializer class in common methods so that all the objects
+can be called in the beginning of the execution
+
+-----------------------------------------------------------------------------
+Case Study from start to finish
+Login feature -
+
+valid login test -
+    Given user is navigated to HRMS application
+    When user enters valid username and password
+    And user clicks on login button
+    Then user is successfully logged in
+
+invalid login test
+    Given user is navigated to HRMS application
+    When user enters invalid username and password
+    And user clicks on login button
+    Then user should get error message on screen
+
+
+invalid username and valid password
+valid username and invalid password
+valid username and blank password
+blank username and valid password
+
+
+
+Forgotten account
+    Given user is navigated to HRMS application
+    When user clicks on fogotton account link
+    Then user should be navigated to forgot account page
+
+Signup for FB
+    Given user is navigated to HRMS application
+    When user clicks on signup for facebook page
+    Then user should be navigated to signup page
+
+We will create feature file with the name - Login.feature
+
+in this file, I will write all the scenarios
+
+create maven project -
+look for test folder
+create resources
+create features
+create login.feature
+write all the scenarios
+
+you need to create step definition -
+to keep all step def's, create steps package
+under steps package, LoginSteps class
+
+for generating the step def, we need runner class
+create runner package, inside this create runner class
+
+inside runner class - you mention all the cucumber options
+
+you keep step definitions in steps class
+
+now you have to write the code.
+you need common methods to call.
+write common methods and mention all the methods you need in scripting
+
+create config.properties file, create config directory, it will be under resources
+create config reader class, create utils package
+create constants class to keep all the paths
+
+coming back to write the code in steps classes,
+we need locators, common methods.
+
+we need page classes, create pages package
+implement Page object model design pattern
+
+to run these things, we need Hooks class for pre condition and post condition
+you keep it under steps package
+
+-----------------------------------------------------------------------------------
+
+data table -
+
+data table is implement only for one step
+hooks will execute 1 time
+doesn't matter how many data sets you send here, it will execute your pre and post
+condition
+
+
+
+
+
+
+
+
+
 
 
 
