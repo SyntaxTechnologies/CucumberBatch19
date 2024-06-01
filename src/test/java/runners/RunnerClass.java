@@ -20,7 +20,7 @@ import org.junit.runner.RunWith;
         //to start the actual execution after implementing the missing step
         //set the value of dry run to false
         dryRun = false,
-        tags = "@excel"
+        tags = "@luckycharm"
 )
 
 public class RunnerClass {

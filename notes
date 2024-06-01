@@ -363,6 +363,17 @@ condition
 .xlsx - XSSFWorkBook
 .xls - HSSFWorkBook
 
+to validate specific field or string value we need assertions
+
+in cucumber we use junit assertions
+
+Assertions -
+
+assertTrue - if something needs to be validated which exist or not
+assertEquals - if we need to compare 2 values i.e expected and actual
+
+
+
 
 
 
