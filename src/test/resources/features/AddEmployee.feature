@@ -41,3 +41,6 @@ Feature: Adding employees using different techniques
     |hali     |MS        |marina  |
     |wilkola  |MS        |fabrezy |
 
+  @excel
+  Scenario: Adding employees from excel file
+    When user adds multiple employees from excel and validate them

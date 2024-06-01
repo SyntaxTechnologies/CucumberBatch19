@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.AddEmployeePage;
 import utils.CommonMethods;
+import utils.ExcelReader;
 
 import java.util.List;
 import java.util.Map;
@@ -95,5 +96,37 @@ public class AddEmployeeSteps extends CommonMethods {
             click(dashboardPage.addEmployeeOption);
             Thread.sleep(2000);
         }
+    }
+
+    @When("user adds multiple employees from excel and validate them")
+    public void user_adds_multiple_employees_from_excel_and_validate_them() throws InterruptedException {
+        List<Map<String, String>> employeeData =  ExcelReader.read();
+
+        for (Map<String, String> employee:
+                employeeData){
+
+            sendText(employee.get("firstName"), addEmployeePage.firstNameLoc);
+            sendText(employee.get("middleName"), addEmployeePage.middleNameLoc);
+            sendText(employee.get("lastName"), addEmployeePage.lastNameLoc);
+            sendText(employee.get("Photograph"), addEmployeePage.photograph);
+
+            //i have to click on checkbox if it is not selected
+            if(!addEmployeePage.checkBox.isSelected()){
+                click(addEmployeePage.checkBox);
+            }
+
+            sendText(employee.get("Username"), addEmployeePage.username);
+            sendText(employee.get("Password"), addEmployeePage.passwordUser);
+            sendText(employee.get("confirmPassword"), addEmployeePage.confirmPasswordUser);
+            click(addEmployeePage.saveButton);
+
+            Thread.sleep(2000);
+            //verification is pending
+            //which is your homework
+
+            click(dashboardPage.addEmployeeOption);
+            Thread.sleep(2000);
+        }
+
     }
 }
