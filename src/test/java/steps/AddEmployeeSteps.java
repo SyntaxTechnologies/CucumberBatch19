@@ -27,7 +27,7 @@ public class AddEmployeeSteps extends CommonMethods {
       //  WebElement firstNameLoc = driver.findElement(By.id("firstName"));
        // WebElement middleNameLoc = driver.findElement(By.id("middleName"));
        // WebElement lastNameLoc = driver.findElement(By.id("lastName"));
-
+     //   System.out.println(1/0);
       //  AddEmployeePage addEmployeePage = new AddEmployeePage();
         sendText("gibril", addEmployeePage.firstNameLoc);
         sendText("MS", addEmployeePage.middleNameLoc);

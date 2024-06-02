@@ -9,7 +9,7 @@ Feature: Adding employees using different techniques
     And user clicks on Add Employee option
 
 
-  @addemployee @regression
+  @addemployee @regression @failed
   Scenario: Adding an employee in HRMS system
     When user enters firstname and middlename and lastname
     And user clicks on save button

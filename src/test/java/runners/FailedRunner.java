@@ -1,6 +1,5 @@
 package runners;
 
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -8,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         //this will specify the path of features directory
-        features = "src/test/resources/features/",
+        features = "@target/failed.txt",
         //here in glue, we provide the name of the steps package
         //runner class will search all the step definitions inside this package
         glue = "steps",
@@ -23,10 +22,8 @@ import org.junit.runner.RunWith;
         tags = "@failed",
         //pretty keywords prints all the steps in console which we execute
         //to generate the report, i need to mention type of report and location
-        plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json",
-                "rerun:target/failed.txt"}
+        plugin = {"pretty"}
 )
 
-public class RunnerClass {
-
+public class FailedRunner {
 }
