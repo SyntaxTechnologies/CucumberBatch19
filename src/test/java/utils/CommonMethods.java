@@ -1,5 +1,8 @@
 package utils;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,8 +13,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 
 public class CommonMethods extends PageInitializer {
 
@@ -81,11 +87,35 @@ public class CommonMethods extends PageInitializer {
         element.click();
     }
 
-    //take screenshot
-    //checkboxes
-    //radiobuttons
-    //jsclick
+    public static byte[] takeScreenshot(String fileName){
 
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        byte[] picBytes = ts.getScreenshotAs(OutputType.BYTES);
+        //it is not going to take another screenshot, instead it will consider picByte
+        //i.e array of byte as a source file for transfer
+        File sourceFile = ts.getScreenshotAs(OutputType.FILE);
+
+        try {
+            FileUtils.copyFile(sourceFile, new File
+                    (Constants.SCREENSHOT_FILEPATH+fileName+
+                            " "+ getTimeStamp("yyyy-MM-dd-HH-mm-ss")+".png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return picBytes;
+    }
+
+   public static String getTimeStamp(String pattern){
+
+        Date date = new Date();
+        //yyyy-MM-dd-hh-mm-ss
+       //dd-MM-yyyy-mm-hh-ss
+       //to get the date in my acceptable format, i need to format it
+       SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+
+       return sdf.format(date);
+
+   }
 
 
 }

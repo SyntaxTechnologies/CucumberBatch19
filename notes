@@ -372,6 +372,50 @@ Assertions -
 assertTrue - if something needs to be validated which exist or not
 assertEquals - if we need to compare 2 values i.e expected and actual
 
+Class 5 -
+
+recap -
+
+data table - when we need to add multiple data sets in single execution, unlike
+examples table, we implement data table.
+
+difference examples table vs data table
+
+in examples table - hooks execute based on data sets
+                    background executes based on data sets
+
+in data table - hooks execute one time
+                background executes 1 time
+
+
+for data management and maintain confidentiality of data,
+excel file - we pass data from excel file
+
+list of maps -
+for each loop, to get one map at one point of time
+based on keys, we fetch values from excel file via excel reader class
+
+assertions -
+junit -
+
+assert.asserttrue
+assert.assertequals
+
+all types of report you generate in framework will be a part of target folder
+
+pretty keyword - it is used to print all the steps in console
+
+in cucumber, when you take screenshot, it accepts screenshot in array of byte
+byte[]
+
+Scenario class in cucumber - it holds the complete information of execution done
+which test case executed
+which test case passed
+which test case failed
+what steps passed
+what steps failed
+
+
 
 
 
