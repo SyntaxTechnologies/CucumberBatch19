@@ -1,6 +1,5 @@
 package runners;
 
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -20,12 +19,10 @@ import org.junit.runner.RunWith;
         //to start the actual execution after implementing the missing step
         //set the value of dry run to false
         dryRun = false,
-        tags = "@luckycharm",
+        tags = "@smoke",
         //pretty keywords prints all the steps in console which we execute
         //to generate the report, i need to mention type of report and location
         plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json"}
 )
-
-public class RunnerClass {
-
+public class SmokeRunner {
 }
