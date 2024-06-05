@@ -416,6 +416,53 @@ what steps passed
 what steps failed
 
 
+rerun plugin - it is used to keep all the failed test case path details
+which we pass under failedrunner class to give these test cases second chance
+
+Class 6 -
+recap -
+
+reports -
+
+pretty keyword - under plugin in runner class -
+to print steps in the console
+
+html report - under target folder, it generates the report
+
+we executed our code from pom.xml file
+maven surefile plugin is used to execute test cases from pom.xml file
+
+maven cucumber reporter plugin - to generate report from pom.xml file
+we need to attach screenshot in the report
+
+screenshot method which accepts array of byte in cucumber
+it gives us screenshot, and to add different names to the screenshot,
+we use timestamp method
+
+- sometimes, normal click doesn't work in the automation
+
+logging -
+
+stages/levels of logs -
+
+info - to record the message which is captured during the execution
+warn - it is going to inform you that you might have a problem in your code
+error - it is used to inform you about the serious issue that your script might cause
+fatal - it is used to inform serious issue like error but it stops the execution when the
+seriousness of the code is high
+
+clean
+compile
+verify
+test
+install
+package are the phases of maven
+
+mvn clean test is the command to run from CMD
+mvn test -Dcucumber.options="--tags @smoke" to override the tag
+
+
+
 
 
 

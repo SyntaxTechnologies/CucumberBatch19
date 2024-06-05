@@ -1,10 +1,7 @@
 package utils;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.v85.page.Page;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -116,6 +113,14 @@ public class CommonMethods extends PageInitializer {
        return sdf.format(date);
 
    }
+   public static JavascriptExecutor getJSExecutor(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        return js;
+   }
 
+   public static void jsClick(WebElement element){
+       getJSExecutor().executeScript("arguments[0].click();",element);
+
+   }
 
 }
