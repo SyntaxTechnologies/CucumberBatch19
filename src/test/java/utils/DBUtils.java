@@ -10,9 +10,6 @@ import java.util.Map;
 public class DBUtils {
 
 
-    public static void main(String[] args) {
-        System.out.println( fetch("select * from person"));
-    }
 
     public static List<Map<String,String>> fetch(String query){
 

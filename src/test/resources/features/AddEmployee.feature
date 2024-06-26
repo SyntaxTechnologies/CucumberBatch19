@@ -15,7 +15,7 @@ Feature: Adding employees using different techniques
     And user clicks on save button
     Then employee added successfully
 
-    @cucumber @regression
+    @cucumber @regression @DBTesting
     Scenario: Adding employee from feature file
       When user enters "Sheila" , "MS" and "Bangal"
       And user clicks on save button
