@@ -1009,10 +1009,25 @@ jsonpath = it returns the keys and values from the path
 hamcrest matchers = it is a framework in API which helps us to create matchers for
 body. we use it with junit and with other frameworks.
 
+creating the employee
+get the employee
+update the employee
+get updated employee
 
+homework =
+getAlljobTitles
+getAllEmployee
 
+Rest assured -
+Cucumber -
 
+integrate cucumber with rest assured
 
+feature files - scenarios
+step definitions - write the code for rest assured
+
+Given the request is prepared for creating the employee
+given.
 
 
 
