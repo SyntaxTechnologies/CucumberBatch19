@@ -461,6 +461,606 @@ package are the phases of maven
 mvn clean test is the command to run from CMD
 mvn test -Dcucumber.options="--tags @smoke" to override the tag
 
+----------------------------------
+
+API -
+
+Class 1
+
+API - application programming interface
+
+
+client - the one who makes the request
+server - the one who responds to the request
+API - the one who transfer request and response
+
+
+client-server architecture
+
+presentation - the layer what you see on the screen
+application - the logic of application has been written
+data - the data is available
+
+
+1 tier architecture -
+
+
+When the presentation layer, application layer and data layer available at one place, we call it 1 tier architecture.
+calculator, notepad, ms paint, wordpad etc. Standalone application, desktop based application
+
+2 tier architecture -
+
+when the presentation layer is available at one place, application and data layer is available at another place.
+ex - mac'd, dominoz, pizza, subway Walmart etc.
+
+3 tier architecture -
+
+When the presentation is available at one place, application layer is available at second place and data layer is available at third place.
+
+n-tier architecture -
+
+MMT, Facebook, IG, WhatsApp, Amazon, Ebay etc.
+
+why do we need API's?
+
+to make system developed in different programming languages communicate
+
+to enhance the security of the application.
+
+Class 2 -
+
+Recap -
+
+What is API - Application programming interface
+
+it acts as an intermediator in between front end UI and back end DB.
+it transfers the request from client to server and give the response back from server to client.
+
+presentation layer - the one we see on the screen
+application layer - the one where business logic has been written
+data layer - the one where all the data is available
+
+
+HRMS -
+presentation layer - login screen
+application layer - business logic
+data layer - database
+
+API -
+
+client - server architecture
+
+1 tier architecture - p,a,d layers at one place. ex - calculator, wordpad, desktop based application, standalone application
+
+2 tier architecutre - ex - Walmart, pizza, macd, dominos etc.
+
+3 tier architecture - ex - amazon, skyscanner etc
+
+n tier architecture - expansion of 3 tier
+
+why to use API's?
+for security purpose
+for making the system developed in different lang communicate
+
+
+Swagger document - for API testing
+
+dev team provides you this document
+
+
+in order to make the complete API request I need 3 points
+
+Address of the server
+location of the API
+end-point
+
+what operations we need to perform in API?
+
+CRUD - create, retrieve, update, delete
+
+why do we need to perform this?
+
+nyc - Greece - 123abc
+bom - nyc - 123abc
+
+
+$2000
+Fabricio
+
+we will test API manually
+
+
+there are API's which are hosted over the internet - Webservices
+there are API's which work without the internet - API
+
+All the webservices are API's but all the API's are not webservices
+
+types of web services -
+	- REST - representational state transfer
+	- SOAP - simple object access protocol
+
+difference between rest and soap
+
+we will test REST API's.
+
+We will test REST api's
+
+HTTP - hypertext transfer protocol -
+
+it allows you to communicate with the applications over the internet
+
+CRUD operations - HTTP has its own method -
+
+create - POST
+retrieve - GET
+update - PUT
+delete - DELETE
+
+swagger document -
+
+
+Address of the server - location of the api - end point
+
+
+
+Base URI - BaseURL + end point
+Base URI - hrm.syntaxtechs.net/syntaxapi/api/getOneEmployee.php
+
+admin user - we need to create this user at first
+
+for creating an admin
+
+prepare the request
+
+Base URI - hrm.syntaxtechs.net/syntaxapi/api/createUser.php
+Type of method - POST
+payload/body -
+
+{
+  "name": "adminbatch19",
+  "email": "testbatch19@test.com",
+  "password": "test@123"
+}
+
+
+token/sessions
+
+public API
+private API
+
+private API -
+
+authentication and authorization
+
+who are you?
+Are you allowed?
+Show your ID?
+What access you have?
+
+
+JWT - json web token
+
+	- bearer
+	- mac
+	- grants
+
+
+
+Generating the token -
+
+BaseURI = hrm.syntaxtechs.net/syntaxapi/api/generateToken.php
+
+type of method = POST
+
+payload/body =
+
+{
+  "email": "testbatch19@test123.com",
+  "password": "test@123"
+}
+
+header =
+content-type = application/json
+
+response code = 200
+
+
+header = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.
+payload = yJpYXQiOjE3MTk2ODUyNzAsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTcxOTcyODQ3MCwidXNlcklkIjoiNjYyMSJ9.
+Signature = ZtMu-R8eH3ftLzLWPqIlmVxkWhLgPqjf4LG0QkHCoDs
+
+
+
+create an employee
+
+Base URI = hrm.syntaxtechs.net/syntaxapi/api/createEmployee.php
+Type of method = POST
+Payload/body =
+
+{
+  "emp_firstname": "manal",
+  "emp_lastname": "premium",
+  "emp_middle_name": "ms",
+  "emp_gender": "F",
+  "emp_birthday": "1976-06-16",
+  "emp_status": "permanent",
+  "emp_job_title": "QA Manager"
+}
+
+
+status code in response - 201
+
+
+
+Class 3 -
+
+recap -
+	- CRUD -  create, retrieve, update, delete
+	HTTP - hypertext transfer protocol
+
+webservices - the API's which are hosted over the internet.
+
+2 types
+REST & SOAP
+
+REST - we will work with REST
+
+Base URI, Base URL, end point
+
+centralized document - swagger document
+
+to perform crud operations - we need admin user
+
+to register admin user -
+
+BaseURI = baseURL + endpoint
+type of method =
+body/payload =
+headers =
+
+authentication & authorization
+token -
+
+generate the token
+Base URI = baseURL + endpoint
+Type of method =
+body/payload = use admin credentials
+headers =
+
+in response, we get JWT(JSON Web Token)
+
+there are 3 parts in token - header, payload, signature (same message has  been transferred from server to client)
+
+types of JWT -
+	- Bearer
+	- MAC
+	- Grants
+
+
+In order to perform crud operations -
+
+Create a record in the database using API,
+
+create an employee -
+
+BaseURI = BaseURL + Endpoint
+Type of method =
+Payload/Body =
+Headers =
+Authorization = token
+
+
+Get One Employee -
+
+BaseURI = BaseURL + endpoint
+
+hrm.syntaxtechs.net/syntaxapi/api/getOneEmployee.php
+
+type of method = GET
+
+employee_id = 108734A (When you have to select specific information from multiple info, you need query params)
+
+authorization = token
+
+
+
+
+
+
+get all job titles
+
+BaseURI = BaseURL + endpoint
+
+hrm.syntaxtechs.net/syntaxapi/api/jobTitle.php
+
+type of method = GET
+
+authorization = token
+
+path parameter -
+
+
+
+Create an employee -> Get an employee - done
+Update an employee -> Get an updated employee
+Delete an employee -> Get deleted employee
+
+
+
+Update an employee -
+
+BaseURI = hrm.syntaxtechs.net/syntaxapi/api/updateEmployee.php
+Type of method = PUT
+payload/body =
+
+{
+
+  "employee_id": "108734A",
+  "emp_lastname": "carlston",
+  "emp_middle_name": "james",
+
+}
+
+headers
+content-type = application/json
+
+authorization = token
+
+
+
+
+
+hrm.syntaxtechs.net/syntaxapi/api/updatePartialEmplyeesDetails.php
+Patch
+body =
+
+{
+  "employee_id": "108734A",
+  "emp_lastname": "carlston",
+  "emp_middle_name": "james"
+}
+
+authorization = token
+
+
+test your application in different env
+
+dev
+test/qa
+staging
+production
+
+
+we parameterized all the environments
+we update all the end points (globals)
+
+
+if I am creating the employee
+I should get 201 status code
+I should get proper validation message
+I should get exact same values in the body
+I should get proper time also
+
+
+Assertions
+postman gives you in-built library for the assertions
+
+chai library
+
+pm - postman object
+it allows us to use different methods for validation
+
+pm.test
+pm.expect
+pm.request
+pm.globals
+
+
+in postman, we can write functions to validate the different fields, status code and time too.
+
+
+JavaScript function, postman used
+
+pm.test("name of the method", function () {
+    the code you want to validate;
+});
+
+
+class 4 -
+
+recap -
+
+CRUD operations -
+
+create - 201
+retrieve - 200
+update  - full update - 200 (PUT), partial update 201 (PATCH)
+delete - 200
+
+we keep all the requests in postman under collection.
+
+to perform validations of request, we should write tests in postman.
+
+chai assertion library (javascript language)
+pm - postman object
+
+pm.test  to write test
+pm.expect - when we expect something to validation
+pm.request -
+pm.response - in order to get any value from response
+pm.globals - if you wish to set any value globally during the request execution
+
+
+
+pm.test("name of the method", function()){
+the block of code}
+
+we can validate -
+status code
+actual time of execution
+any value in the response body
+any key in the response body
+any string in the response body
+any headers in the response body
+
+
+As a user if I create employee using API call, I should be able to validate
+
+Acceptance criteria -
+validate the body -  (actual key vs values)
+validate the status code
+validate the response headers
+validate time of execution
+
+
+json format
+
+int i = 5 - java
+const varName = value - js
+
+revision -
+Client - server
+the one who makes the request
+server is the one who responds to request
+API - intermediator
+
+client-server architecture
+1 tier arch - desktop apps
+2 tier arch - subway, macd, dominos
+3 tier arch - MMT, HRMS
+n tier arch - extended version of 3 tier arch
+
+Base URI = base URL + endpoint
+
+swagger document we need to get all the details of api testing
+
+what operations we perform - CRUD
+
+webservices - all the webservices are API's.
+
+types of webservices -
+REST
+SOAP
+
+REST API's.
+
+HTTP protocol
+POST
+GET
+PUT/PATCH
+DELETE
+
+we need to create admin user to perform all the operations
+
+stateful - username/password
+stateless - token
+
+JWT - json web token
+bearer
+mac
+grants
+
+parts of token - header, payload, signature
+
+status code -
+201 - create
+200 - get
+200 - put
+201 - patch
+
+validations -
+pm object - chai assertion library
+pm.expect
+pm.test
+pm.response
+pm.request
+pm.globals
+
+json conversion of response body
+const vaeName = pm.response.json();
+
+collectively - run the collection
+in which I can include/exclude the api request
+
+---------------------------------------------------------------------------------------
+API Automation -
+
+Rest Assured - to automate API's
+
+REST web service - the rest web services allows us to send data in JSON format.
+JSON format - it consists of key and value pair
+
+REST assured - it is a DSL (domain specific language)
+
+Rest assured follows BDD approach
+
+In Cucumber -
+Given -  pre condition
+When - actions
+Then - expected result
+
+In Rest assured -
+Given - prepare the request
+When - sending the request/hitting the endpoint
+Then - validation of response/expected output
+
+jsonpath = it returns the keys and values from the path
+
+hamcrest matchers = it is a framework in API which helps us to create matchers for
+body. we use it with junit and with other frameworks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
