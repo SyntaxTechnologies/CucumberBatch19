@@ -1029,9 +1029,13 @@ step definitions - write the code for rest assured
 Given the request is prepared for creating the employee
 given.
 
+class 6 -
+recap - integrated Rest assured with cucumber
+baseURI = baseURL (because we send endpoint separately)
 
+we created separate API steps package
 
-
+we have added API constants class here to pass all the endpoints and headers
 
 
 
