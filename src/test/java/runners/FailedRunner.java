@@ -22,7 +22,8 @@ import org.junit.runner.RunWith;
         tags = "@failed",
         //pretty keywords prints all the steps in console which we execute
         //to generate the report, i need to mention type of report and location
-        plugin = {"pretty"}
+        plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json"
+                }
 )
 
 public class FailedRunner {
