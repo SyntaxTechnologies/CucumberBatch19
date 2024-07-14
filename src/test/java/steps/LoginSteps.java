@@ -44,7 +44,7 @@ public class LoginSteps extends CommonMethods {
 
         String expectedUrl = "http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/dashboard";
         String actualUrl = driver.getCurrentUrl();
-        Assert.assertEquals(expectedUrl,actualUrl);
+        Assert.assertEquals(expectedUrl,"Safsafdsafssas");
         //  System.out.println("test passed");
     }
 }
