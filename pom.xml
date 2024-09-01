@@ -105,6 +105,7 @@
                 <artifactId>maven-cucumber-reporting</artifactId>
                 <version>5.6.2</version>
                 <executions>
+
                     <execution>
                         <id>execution</id>
                         <phase>test</phase>
