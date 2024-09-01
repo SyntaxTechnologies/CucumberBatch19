@@ -16,7 +16,6 @@ import org.junit.runner.RunWith;
         //it stops the actual execution and scans all the step definitions,
         //if the step def is missing in any of the class, then it will give you that
         //missing step def. if all the step def are there, it will provide green tick
-
         //to start the actual execution after implementing the missing step
         //set the value of dry run to false
         dryRun = false,
